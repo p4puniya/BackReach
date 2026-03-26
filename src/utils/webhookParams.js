@@ -25,9 +25,17 @@ function getFromNumber(p) {
   return p.From || p.CallFrom || p.FromNumber || p.from || '';
 }
 
+/** Skip auto-callback when webhook is from an outbound API leg (loop prevention). */
+function isOutboundWebhookContext(p) {
+  const callType = String(p.CallType || p.call_type || '').toLowerCase();
+  const direction = String(p.Direction || p.direction || '').toLowerCase();
+  return callType === 'outbound-api' || direction === 'outbound-api';
+}
+
 module.exports = {
   getWebhookParams,
   getSpeechResult,
   getCallSid,
   getFromNumber,
+  isOutboundWebhookContext,
 };
