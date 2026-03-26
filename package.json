@@ -1,0 +1,19 @@
+{
+  "name": "backreach-missed-call-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hindi AI missed call recovery — Exotel voice + WhatsApp, Supabase",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
